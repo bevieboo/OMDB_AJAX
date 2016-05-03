@@ -8,12 +8,19 @@ $(document).on('click', 'button', function(event) {
     method: 'get'
   }).done(function(movie) {
     $.each(movie['Search'], function(key, value) {
-      var $newTitle = $('<h1>').text(value.Title);
-      $('.movie-list').append($newTitle).addClass('list');
-      $('<img />', {
+      var $newDiv = $('<div>');
+      var $newTitle = $('<h4>').text(value.Title);
+      var $newImage = $('<img />', {
         src: value.Poster,
         width: '200px',
-      }).appendTo($('.movie-list'));
+      });
+      var $blah = $newDiv.addClass('list').append($newTitle).append($newImage);
+      $('.movie-list').append($blah);
     })
   })
 })
+
+// $('<img />', {
+//   src: value.Poster,
+//   width: '200px',
+// }).appendTo($('.movie-list'));
