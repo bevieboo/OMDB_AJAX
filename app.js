@@ -1,6 +1,6 @@
 console.log('JAWS');
 
-$(document).on('click', 'button', function(event) {
+$('button').on('click', function(event) {
   event.preventDefault();
   $('.movie-list').empty();
   $.ajax({
@@ -14,8 +14,8 @@ $(document).on('click', 'button', function(event) {
         src: value.Poster,
         width: '200px',
       });
-      var $blah = $newDiv.addClass('list').append($newTitle).append($newImage);
-      $('.movie-list').append($blah);
+      var $addBlock = $newDiv.addClass('list').append($newTitle).append($newImage);
+      $('.movie-list').append($addBlock);
     })
   })
 })
